@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Nirmitee.DaVinci.Common/Nirmitee.DaVinci.Common.csproj" />
+    <Project Path="src/Nirmitee.DaVinci.Pas.Host/Nirmitee.DaVinci.Pas.Host.csproj" />
+    <Project Path="src/Nirmitee.DaVinci.Pas/Nirmitee.DaVinci.Pas.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nirmitee.DaVinci.Pas.Tests/Nirmitee.DaVinci.Pas.Tests.csproj" />
+  </Folder>
+</Solution>

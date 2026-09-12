@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Detect changed areas
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      go: ${{ steps.filter.outputs.go }}
+      dotnet: ${{ steps.filter.outputs.dotnet }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            go:
+              - 'go/**'
+              - 'spec/**'
+              - 'testdata/**'
+              - '.github/workflows/ci.yml'
+            dotnet:
+              - 'dotnet/**'
+              - 'spec/**'
+              - 'testdata/**'
+              - '.github/workflows/ci.yml'
+
+  go:
+    name: Go vet, test, build
+    needs: changes
+    if: needs.changes.outputs.go == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go/go.mod
+          cache-dependency-path: go/go.sum
+      - name: gofmt
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "These files need gofmt:"
+            echo "$unformatted"
+            exit 1
+          fi
+      - name: bundled rules match spec
+        run: cmp pas/adjudication-rules.json ../spec/adjudication-rules.json
+      - name: go vet
+        run: go vet ./...
+      - name: go test
+        run: go test ./...
+      - name: go build
+        run: go build -o bin/pas-server ./cmd/pas-server
+
+  dotnet:
+    name: .NET build and test
+    needs: changes
+    if: needs.changes.outputs.dotnet == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dotnet
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_NOLOGO: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: dotnet restore
+        run: dotnet restore Nirmitee.DaVinci.Pas.slnx
+      - name: dotnet build
+        run: dotnet build Nirmitee.DaVinci.Pas.slnx -c Release --no-restore
+      - name: dotnet test
+        run: dotnet test Nirmitee.DaVinci.Pas.slnx -c Release --no-build --verbosity normal
+
+  docker-go:
+    name: Docker build (Go, no push)
+    needs: changes
+    if: needs.changes.outputs.go == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: go
+          file: go/Dockerfile
+          push: false
+          tags: davinci-pas-server-go:ci
+          cache-from: type=gha,scope=go
+          cache-to: type=gha,mode=max,scope=go
+
+  docker-dotnet:
+    name: Docker build (.NET, no push)
+    needs: changes
+    if: needs.changes.outputs.dotnet == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: dotnet/Dockerfile
+          push: false
+          tags: davinci-pas-server-dotnet:ci
+          cache-from: type=gha,scope=dotnet
+          cache-to: type=gha,mode=max,scope=dotnet

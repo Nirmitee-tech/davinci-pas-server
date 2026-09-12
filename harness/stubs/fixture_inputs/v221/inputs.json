@@ -1,0 +1,53 @@
+{
+  "suite_id": "davinci_pas_server_suite_v221",
+  "inputs": [
+    {
+      "name": "server_endpoint",
+      "value": "${FHIR_BASE}"
+    },
+    {
+      "name": "access_token",
+      "value": "${NOTIFICATION_TOKEN}"
+    },
+    {
+      "name": "subscription_resource",
+      "file": "subscription.json"
+    },
+    {
+      "name": "approval_pa_submit_request_payload",
+      "file": "approval.json"
+    },
+    {
+      "name": "denial_pa_submit_request_payload",
+      "file": "denial.json"
+    },
+    {
+      "name": "pended_pa_submit_request_payload",
+      "file": "pended.json"
+    },
+    {
+      "name": "must_support_pa_submit_request_payload",
+      "file": "ms_submit.json"
+    },
+    {
+      "name": "must_support_pa_inquire_request_payload",
+      "file": "ms_inquire.json"
+    },
+    {
+      "name": "claim_update_initial_submit_payload",
+      "file": "cu_initial.json"
+    },
+    {
+      "name": "claim_update_add_item_submit_payload",
+      "file": "cu_add_item.json"
+    },
+    {
+      "name": "claim_update_modify_cancel_submit_payload",
+      "file": "cu_modify_cancel.json"
+    },
+    {
+      "name": "claim_update_cancel_all_submit_payload",
+      "file": "cu_cancel_all.json"
+    }
+  ]
+}

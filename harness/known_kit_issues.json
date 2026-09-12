@@ -1,0 +1,5 @@
+{
+  "description": "Test results that a conformant PAS payer server cannot avoid with davinci-pas-test-kit 0.15.2. They still count as failures (run_suite.py exits 3 when these are the only ones). Each entry cites live evidence under harness/reports. Remove an entry once the kit is fixed. scope: all, local (only on a local Inferno) or public (only on inferno.healthit.gov).",
+  "kit": "davinci-pas-test-kit 0.15.2 (inferno_core 1.4.3, subscriptions_test_kit 0.12.2)",
+  "issues": []
+}

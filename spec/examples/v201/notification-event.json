@@ -1,0 +1,81 @@
+{
+  "headers": {
+    "Content-Type": "application/fhir+json",
+    "Authorization": "Bearer nirmitee-pas-v201-example-token"
+  },
+  "body": {
+    "resourceType": "Bundle",
+    "id": "d9b6a8fe-816c-4418-a2c0-2d3ae63b3424",
+    "type": "history",
+    "timestamp": "2026-09-12T10:00:00Z",
+    "entry": [
+      {
+        "fullUrl": "urn:uuid:6452808d-4e8b-4fb6-ae32-464b869d31c5",
+        "resource": {
+          "resourceType": "Parameters",
+          "id": "6452808d-4e8b-4fb6-ae32-464b869d31c5",
+          "parameter": [
+            {
+              "name": "subscription",
+              "valueReference": {
+                "reference": "http://host.docker.internal:8085/v201/fhir/Subscription/5a048f30-b166-4f36-aca5-f10218e15f84"
+              }
+            },
+            {
+              "name": "topic",
+              "valueCanonical": "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
+            },
+            {
+              "name": "status",
+              "valueCode": "active"
+            },
+            {
+              "name": "type",
+              "valueCode": "event-notification"
+            },
+            {
+              "name": "events-since-subscription-start",
+              "valueString": "1"
+            },
+            {
+              "name": "notification-event",
+              "part": [
+                {
+                  "name": "event-number",
+                  "valueString": "1"
+                },
+                {
+                  "name": "timestamp",
+                  "valueInstant": "2026-09-12T10:00:00Z"
+                },
+                {
+                  "name": "focus",
+                  "valueReference": {
+                    "reference": "http://host.docker.internal:8085/v201/fhir/ClaimResponse/9b40c4a6-ca4a-4b2b-a16b-017ab718214a"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://host.docker.internal:8085/v201/fhir/Subscription/5a048f30-b166-4f36-aca5-f10218e15f84/$status"
+        },
+        "response": {
+          "status": "200"
+        }
+      },
+      {
+        "fullUrl": "http://host.docker.internal:8085/v201/fhir/ClaimResponse/9b40c4a6-ca4a-4b2b-a16b-017ab718214a",
+        "request": {
+          "method": "PUT",
+          "url": "ClaimResponse/9b40c4a6-ca4a-4b2b-a16b-017ab718214a"
+        },
+        "response": {
+          "status": "200"
+        }
+      }
+    ]
+  }
+}

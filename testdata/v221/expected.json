@@ -1,0 +1,120 @@
+{
+  "approval_submit": {
+    "claim": "A1",
+    "items": {
+      "1": "A1"
+    },
+    "use_case": "approval",
+    "claimIdentifier": "PA-2026-0001",
+    "bundle": "pas-req-0001"
+  },
+  "denial_submit": {
+    "claim": "A3",
+    "items": {
+      "1": "A3"
+    },
+    "use_case": "denial",
+    "claimIdentifier": "PA-2026-0002",
+    "bundle": "pas-req-0002"
+  },
+  "pended_submit": {
+    "claim": "A4",
+    "items": {
+      "1": "A4"
+    },
+    "use_case": "pended",
+    "after_finalize": {
+      "1": "A1"
+    },
+    "claimIdentifier": "PA-2026-0003",
+    "bundle": "pas-req-0003"
+  },
+  "must_support_submit": [
+    {
+      "claim": "A6",
+      "items": {
+        "1": "A6",
+        "2": "A1"
+      },
+      "addItem": true,
+      "claimIdentifier": "PA-2026-0004",
+      "bundle": "pas-req-0004"
+    },
+    {
+      "claim": "A4",
+      "items": {
+        "1": "A4",
+        "2": "A3"
+      },
+      "communicationRequest": true,
+      "task": true,
+      "error": true,
+      "request": "data-absent-reason",
+      "claimIdentifier": "PA-2026-0005",
+      "bundle": "pas-req-0005"
+    }
+  ],
+  "must_support_inquire": [
+    {
+      "items": {
+        "1": "A6",
+        "2": "A1"
+      },
+      "replacedAuthorization": {
+        "AUTH-PA-2026-0004-1": "AUTH-PA-2026-0004-1-R1"
+      },
+      "claimIdentifier": "PA-2026-0004",
+      "bundle": "pas-inq-0004"
+    },
+    {
+      "items": {
+        "1": "A4",
+        "2": "A3"
+      },
+      "request": "data-absent-reason",
+      "task": true,
+      "error": true,
+      "replacedAuthorization": {
+        "AUTH-PA-2026-0104-1": "AUTH-PA-2026-0104-1-R1"
+      },
+      "claimIdentifier": "PA-2026-0104",
+      "bundle": "pas-inq-0104"
+    }
+  ],
+  "claim_update_initial_submit": {
+    "items": {
+      "1": "A1",
+      "2": "A1"
+    },
+    "claimIdentifier": "PA-2026-0006",
+    "bundle": "pas-req-0006-r0"
+  },
+  "claim_update_add_item_submit": {
+    "items": {
+      "1": "A1",
+      "2": "A1",
+      "3": "A1"
+    },
+    "claimIdentifier": "PA-2026-0006",
+    "bundle": "pas-req-0006-r1"
+  },
+  "claim_update_modify_cancel_submit": {
+    "items": {
+      "1": "A1",
+      "2": "C",
+      "3": "A1"
+    },
+    "claimIdentifier": "PA-2026-0006",
+    "bundle": "pas-req-0006-r2"
+  },
+  "claim_update_cancel_all_submit": {
+    "claim": "C",
+    "items": {
+      "1": "C",
+      "2": "C",
+      "3": "C"
+    },
+    "claimIdentifier": "PA-2026-0006",
+    "bundle": "pas-req-0006-r3"
+  }
+}

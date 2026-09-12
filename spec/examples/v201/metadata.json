@@ -1,0 +1,78 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "nirmitee-pas-server-v201",
+  "url": "http://host.docker.internal:8085/v201/fhir/metadata",
+  "version": "0.1.0",
+  "name": "NirmiteePASServer",
+  "title": "Nirmitee PAS Server (Da Vinci PAS 2.0.1)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-09-12",
+  "publisher": "Nirmitee",
+  "description": "Da Vinci Prior Authorization Support 2.0.1 payer server with synthetic adjudication rules.",
+  "kind": "instance",
+  "software": {
+    "name": "Nirmitee PAS Server",
+    "version": "0.1.0"
+  },
+  "implementation": {
+    "description": "Nirmitee PAS Server 2.0.1",
+    "url": "http://host.docker.internal:8085/v201/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Claim",
+          "operation": [
+            {
+              "name": "submit",
+              "definition": "http://hl7.org/fhir/us/davinci-pas/OperationDefinition/Claim-submit"
+            },
+            {
+              "name": "inquire",
+              "definition": "http://hl7.org/fhir/us/davinci-pas/OperationDefinition/Claim-inquiry"
+            }
+          ]
+        },
+        {
+          "type": "ClaimResponse",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
+        },
+        {
+          "type": "Subscription",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
+              "valueCanonical": "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "create"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

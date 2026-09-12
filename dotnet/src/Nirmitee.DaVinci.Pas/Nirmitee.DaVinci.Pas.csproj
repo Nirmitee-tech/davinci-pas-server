@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Nirmitee.DaVinci.Pas</RootNamespace>
+    <Description>Da Vinci Prior Authorization Support (PAS) payer server as a mountable library: services.AddPas(configuration) and endpoints.MapPas(prefix).</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nirmitee.DaVinci.Common\Nirmitee.DaVinci.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The shared adjudication rules file, bundled so the library works without a file on disk. -->
+    <EmbeddedResource Include="..\..\..\spec\adjudication-rules.json" LogicalName="Nirmitee.DaVinci.Pas.adjudication-rules.json" Link="Rules\adjudication-rules.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Nirmitee.DaVinci.Pas.Tests" />
+  </ItemGroup>
+
+</Project>

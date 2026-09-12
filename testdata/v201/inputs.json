@@ -1,0 +1,42 @@
+{
+  "suite_id": "davinci_pas_server_suite_v201",
+  "note": "Synthetic data. Values ${FHIR_BASE} and ${NOTIFICATION_TOKEN} are substituted by harness/run_suite.py.",
+  "inputs": [
+    {
+      "name": "server_endpoint",
+      "value": "${FHIR_BASE}"
+    },
+    {
+      "name": "access_token",
+      "value": "${NOTIFICATION_TOKEN}"
+    },
+    {
+      "name": "subscription_resource",
+      "file": "subscription.json"
+    },
+    {
+      "name": "approval_pa_submit_request_payload",
+      "file": "approval_submit.json"
+    },
+    {
+      "name": "denial_pa_submit_request_payload",
+      "file": "denial_submit.json"
+    },
+    {
+      "name": "pended_pa_submit_request_payload",
+      "file": "pended_submit.json"
+    },
+    {
+      "name": "pended_pa_inquire_request_payload",
+      "file": "pended_inquire.json"
+    },
+    {
+      "name": "must_support_pa_submit_request_payload",
+      "file": "must_support_submit.json"
+    },
+    {
+      "name": "must_support_pa_inquire_request_payload",
+      "file": "must_support_inquire.json"
+    }
+  ]
+}

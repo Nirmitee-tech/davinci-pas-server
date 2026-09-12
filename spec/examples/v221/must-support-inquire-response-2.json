@@ -1,0 +1,952 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "return",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "b1cf2198-0713-48ad-a2a9-1e239280812d",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle"
+          ]
+        },
+        "identifier": {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:uuid:520f5200-3b35-42ed-a2d5-5a1eb2b63d58"
+        },
+        "type": "collection",
+        "timestamp": "2026-09-12T10:00:00Z",
+        "entry": [
+          {
+            "fullUrl": "urn:uuid:e5353d72-81c1-4cfd-a883-3650de77e0f5",
+            "resource": {
+              "resourceType": "ClaimResponse",
+              "id": "e5353d72-81c1-4cfd-a883-3650de77e0f5",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claiminquiryresponse"
+                ]
+              },
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-TransmissionIdentifiers",
+                  "extension": [
+                    {
+                      "url": "applicationSenderCode",
+                      "valueString": "NSHPAPP"
+                    },
+                    {
+                      "url": "applicationReceiverCode",
+                      "valueString": "LSMGAPP"
+                    },
+                    {
+                      "url": "interchangeSenderID",
+                      "valueString": "NSHP01"
+                    },
+                    {
+                      "url": "interchangeReceiverID",
+                      "valueString": "LSMG01"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-claimResponseReviewer",
+                  "extension": [
+                    {
+                      "url": "wasHumanReviewedFlag",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "reviewerNPI",
+                      "valueIdentifier": {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "1900000005"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider",
+                  "extension": [
+                    {
+                      "url": "provider",
+                      "valueReference": {
+                        "reference": "urn:uuid:04e2d775-052b-4568-ae36-ac0a076b5da6"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "identifier": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-identifierJurisdiction",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://www.usps.com/",
+                            "code": "MO"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-identifierSubDepartment",
+                      "valueString": "DME-UM"
+                    }
+                  ],
+                  "system": "https://synthetic.nirmitee.io/fhir/sid/pa-request-id",
+                  "value": "PA-2026-0104"
+                }
+              ],
+              "status": "active",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code": "professional"
+                  }
+                ]
+              },
+              "use": "preauthorization",
+              "patient": {
+                "reference": "urn:uuid:33fcdff2-e5ac-46f1-a7a5-d750ee5ad58d"
+              },
+              "created": "2026-09-12T10:00:00Z",
+              "insurer": {
+                "reference": "urn:uuid:eba85426-ef1e-4604-a82e-2b4c23e31587"
+              },
+              "requestor": {
+                "reference": "urn:uuid:c2ddea65-5d55-47b5-a773-9274d2f0989f"
+              },
+              "request": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "unknown"
+                  }
+                ]
+              },
+              "outcome": "partial",
+              "preAuthPeriod": {
+                "start": "2026-09-12",
+                "end": "2026-12-11"
+              },
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+                      "valueIdentifier": {
+                        "system": "https://synthetic.nirmitee.io/fhir/sid/item-trace",
+                        "value": "TRC-0104-1"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber",
+                      "valueString": "AUTH-PA-2026-0104-1-R1"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+                      "valueString": "ADMREF-PA-2026-0104-1"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemRequestedServiceDate",
+                      "valuePeriod": {
+                        "start": "2026-09-15",
+                        "end": "2026-12-14"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-admissionDates",
+                      "valuePeriod": {
+                        "start": "2026-09-15",
+                        "end": "2026-09-16"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-dischargeDate",
+                      "valueDate": "2026-09-16"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                            "code": "G47.33"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "itemSequence": 1,
+                  "noteNumber": [
+                    1
+                  ],
+                  "adjudication": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewActionCode",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "system": "https://codesystem.x12.org/005010/306",
+                                    "code": "A4",
+                                    "display": "Pending"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "category": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                            "code": "submitted"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+                      "valueIdentifier": {
+                        "system": "https://synthetic.nirmitee.io/fhir/sid/item-trace",
+                        "value": "TRC-0104-2"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+                      "valueString": "ADMREF-PA-2026-0104-2"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemRequestedServiceDate",
+                      "valueDateTime": "2026-09-15"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-admissionDates",
+                      "valuePeriod": {
+                        "start": "2026-09-15",
+                        "end": "2026-09-16"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-dischargeDate",
+                      "valueDate": "2026-09-16"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                            "code": "G47.33"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "itemSequence": 2,
+                  "noteNumber": [
+                    1
+                  ],
+                  "adjudication": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewActionCode",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "system": "https://codesystem.x12.org/005010/306",
+                                    "code": "A3",
+                                    "display": "Not Certified"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "category": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                            "code": "submitted"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "adjudication": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+                      "extension": [
+                        {
+                          "url": "secondSurgicalOpinionFlag",
+                          "valueBoolean": false
+                        }
+                      ]
+                    }
+                  ],
+                  "category": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                        "code": "submitted"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "processNote": [
+                {
+                  "number": 1,
+                  "type": "display",
+                  "text": "Synthetic adjudication: claim decision A4 Pending."
+                }
+              ],
+              "error": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorElement",
+                      "extension": [
+                        {
+                          "url": "processNote",
+                          "valuePositiveInt": 1
+                        },
+                        {
+                          "url": "error",
+                          "valueString": "2000F-SV1-01"
+                        }
+                      ]
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorPath",
+                      "valueString": "Claim.item[1].productOrService"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorFollowupAction",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://codesystem.x12.org/005010/889",
+                            "code": "C",
+                            "display": "Please Correct and Resubmit"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "itemSequence": 2,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "https://codesystem.x12.org/005010/901",
+                        "code": "15",
+                        "display": "Required application data missing"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:04e2d775-052b-4568-ae36-ac0a076b5da6",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "04e2d775-052b-4568-ae36-ac0a076b5da6",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitionerrole"
+                ]
+              },
+              "active": true,
+              "practitioner": {
+                "reference": "urn:uuid:f63098c9-251a-4a33-abe8-bb0efdbdb1b2"
+              },
+              "organization": {
+                "reference": "urn:uuid:c2ddea65-5d55-47b5-a773-9274d2f0989f"
+              },
+              "code": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://nucc.org/provider-taxonomy",
+                      "code": "207RP1001X"
+                    }
+                  ]
+                }
+              ],
+              "specialty": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://nucc.org/provider-taxonomy",
+                      "code": "207RP1001X"
+                    }
+                  ]
+                }
+              ],
+              "location": [
+                {
+                  "reference": "urn:uuid:eb3c41af-2370-4e00-a8df-361706d7f5f1"
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0123",
+                  "use": "work"
+                }
+              ],
+              "endpoint": [
+                {
+                  "reference": "urn:uuid:8ee56fbe-1ad8-4322-a87d-e8e08f7a8332"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:f63098c9-251a-4a33-abe8-bb0efdbdb1b2",
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "f63098c9-251a-4a33-abe8-bb0efdbdb1b2",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitioner"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "http://hl7.org/fhir/sid/us-npi",
+                  "value": "1122334455"
+                }
+              ],
+              "name": [
+                {
+                  "use": "official",
+                  "family": "Rao",
+                  "given": [
+                    "Asha"
+                  ],
+                  "prefix": [
+                    "Dr."
+                  ]
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0122",
+                  "use": "work"
+                }
+              ],
+              "address": [
+                {
+                  "use": "work",
+                  "line": [
+                    "200 Lakeside Drive"
+                  ],
+                  "city": "Springfield",
+                  "state": "MO",
+                  "postalCode": "65804",
+                  "country": "US"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:c2ddea65-5d55-47b5-a773-9274d2f0989f",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "c2ddea65-5d55-47b5-a773-9274d2f0989f",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-requestor"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "http://hl7.org/fhir/sid/us-npi",
+                  "value": "1745023006"
+                },
+                {
+                  "system": "http://terminology.hl7.org/NamingSystem/USEIN",
+                  "value": "437654321"
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+                        "code": "payerid"
+                      }
+                    ]
+                  },
+                  "system": "https://synthetic.nirmitee.io/fhir/sid/trading-partner-id",
+                  "value": "LSMG01"
+                }
+              ],
+              "active": true,
+              "type": [
+                {
+                  "coding": [
+                    {
+                      "system": "https://codesystem.x12.org/005010/98",
+                      "code": "1P",
+                      "display": "Provider"
+                    }
+                  ]
+                }
+              ],
+              "name": "Lakeside Synthetic Medical Group",
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0120",
+                  "use": "work"
+                }
+              ],
+              "address": [
+                {
+                  "use": "work",
+                  "line": [
+                    "200 Lakeside Drive"
+                  ],
+                  "city": "Springfield",
+                  "state": "MO",
+                  "postalCode": "65804",
+                  "country": "US"
+                }
+              ],
+              "contact": [
+                {
+                  "name": {
+                    "family": "Rao",
+                    "given": [
+                      "Asha"
+                    ]
+                  },
+                  "telecom": [
+                    {
+                      "system": "phone",
+                      "value": "555-0121",
+                      "use": "work"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:eb3c41af-2370-4e00-a8df-361706d7f5f1",
+            "resource": {
+              "resourceType": "Location",
+              "id": "eb3c41af-2370-4e00-a8df-361706d7f5f1",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-location"
+                ]
+              },
+              "status": "active",
+              "name": "Lakeside Synthetic Sleep Clinic",
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0124",
+                  "use": "work"
+                }
+              ],
+              "address": {
+                "use": "work",
+                "line": [
+                  "200 Lakeside Drive",
+                  "Suite 3"
+                ],
+                "city": "Springfield",
+                "state": "MO",
+                "postalCode": "65804",
+                "country": "US"
+              },
+              "managingOrganization": {
+                "reference": "urn:uuid:c2ddea65-5d55-47b5-a773-9274d2f0989f"
+              }
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:8ee56fbe-1ad8-4322-a87d-e8e08f7a8332",
+            "resource": {
+              "resourceType": "Endpoint",
+              "id": "8ee56fbe-1ad8-4322-a87d-e8e08f7a8332",
+              "status": "active",
+              "connectionType": {
+                "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+                "code": "hl7-fhir-rest"
+              },
+              "name": "Lakeside Synthetic Medical Group FHIR endpoint",
+              "payloadType": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                      "code": "any"
+                    }
+                  ]
+                }
+              ],
+              "address": "https://synthetic.nirmitee.io/provider/fhir"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:33fcdff2-e5ac-46f1-a7a5-d750ee5ad58d",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "33fcdff2-e5ac-46f1-a7a5-d750ee5ad58d",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary",
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-subscriber"
+                ]
+              },
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+                  "extension": [
+                    {
+                      "url": "ombCategory",
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2028-9",
+                        "display": "Asian"
+                      }
+                    },
+                    {
+                      "url": "text",
+                      "valueString": "Asian"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+                  "extension": [
+                    {
+                      "url": "ombCategory",
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2186-5",
+                        "display": "Not Hispanic or Latino"
+                      }
+                    },
+                    {
+                      "url": "text",
+                      "valueString": "Not Hispanic or Latino"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+                  "valueCode": "F"
+                }
+              ],
+              "identifier": [
+                {
+                  "use": "usual",
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MB"
+                      }
+                    ]
+                  },
+                  "system": "https://synthetic.nirmitee.io/fhir/sid/member-id",
+                  "value": "NSHP-M-000123"
+                }
+              ],
+              "name": [
+                {
+                  "use": "official",
+                  "family": "Testwell",
+                  "given": [
+                    "Maya",
+                    "R"
+                  ],
+                  "prefix": [
+                    "Ms."
+                  ],
+                  "suffix": [
+                    "III"
+                  ]
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0100",
+                  "use": "home"
+                },
+                {
+                  "system": "email",
+                  "value": "maya.testwell@example.com",
+                  "use": "home"
+                }
+              ],
+              "gender": "female",
+              "birthDate": "1958-04-12",
+              "address": [
+                {
+                  "use": "home",
+                  "line": [
+                    "100 Synthetic Way"
+                  ],
+                  "city": "Springfield",
+                  "district": "Greene",
+                  "state": "MO",
+                  "postalCode": "65801",
+                  "country": "US",
+                  "period": {
+                    "start": "2015-01-01"
+                  }
+                }
+              ],
+              "multipleBirthInteger": 1,
+              "communication": [
+                {
+                  "language": {
+                    "coding": [
+                      {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "en-US"
+                      }
+                    ]
+                  },
+                  "preferred": true
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:eba85426-ef1e-4604-a82e-2b4c23e31587",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "eba85426-ef1e-4604-a82e-2b4c23e31587",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "http://hl7.org/fhir/sid/us-npi",
+                  "value": "1900000005"
+                },
+                {
+                  "system": "http://terminology.hl7.org/NamingSystem/USEIN",
+                  "value": "431234567"
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+                        "code": "payerid"
+                      }
+                    ]
+                  },
+                  "system": "https://synthetic.nirmitee.io/fhir/sid/payer-id",
+                  "value": "NSHP01"
+                }
+              ],
+              "active": true,
+              "type": [
+                {
+                  "coding": [
+                    {
+                      "system": "https://codesystem.x12.org/005010/98",
+                      "code": "PR",
+                      "display": "Payer"
+                    }
+                  ]
+                }
+              ],
+              "name": "Northwind Synthetic Health Plan",
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-0110",
+                  "use": "work"
+                }
+              ],
+              "address": [
+                {
+                  "use": "work",
+                  "line": [
+                    "500 Payer Plaza"
+                  ],
+                  "city": "Springfield",
+                  "state": "MO",
+                  "postalCode": "65802",
+                  "country": "US"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:2ffe080f-5324-48b4-a94d-9626836171cf",
+            "resource": {
+              "resourceType": "Task",
+              "id": "2ffe080f-5324-48b4-a94d-9626836171cf",
+              "meta": {
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-task"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "https://pas.nirmitee.example/fhir/sid/task-id",
+                  "value": "TASK-PA-2026-0104-1"
+                }
+              ],
+              "status": "requested",
+              "statusReason": {
+                "text": "Additional documentation is required to complete the prior authorization review"
+              },
+              "intent": "order",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                    "code": "attachment-request-code"
+                  }
+                ]
+              },
+              "for": {
+                "reference": "urn:uuid:33fcdff2-e5ac-46f1-a7a5-d750ee5ad58d"
+              },
+              "authoredOn": "2026-09-12T10:00:00Z",
+              "requester": {
+                "identifier": {
+                  "system": "https://pas.nirmitee.example/fhir/sid/payer-id",
+                  "value": "NSHP01"
+                }
+              },
+              "owner": {
+                "identifier": {
+                  "system": "http://hl7.org/fhir/sid/us-npi",
+                  "value": "1745023006"
+                }
+              },
+              "reasonCode": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                    "code": "priorAuthorization"
+                  }
+                ]
+              },
+              "reasonReference": {
+                "identifier": {
+                  "system": "https://synthetic.nirmitee.io/fhir/sid/pa-request-id",
+                  "value": "PA-2026-0104"
+                }
+              },
+              "restriction": {
+                "period": {
+                  "start": "2026-09-12",
+                  "end": "2026-10-12"
+                }
+              },
+              "input": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                        "code": "payer-url"
+                      }
+                    ]
+                  },
+                  "valueUrl": "http://host.docker.internal:8085/v221/fhir"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                      "valuePositiveInt": 1
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-contentModifier",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://loinc.org",
+                            "code": "18804-5"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                        "code": "attachments-needed"
+                      }
+                    ]
+                  },
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "18776-5"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                      "valuePositiveInt": 1
+                    }
+                  ],
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                        "code": "questionnaire-context"
+                      }
+                    ]
+                  },
+                  "valueString": "http://host.docker.internal:8085/v221/fhir/Questionnaire/pas-home-oxygen-documentation"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

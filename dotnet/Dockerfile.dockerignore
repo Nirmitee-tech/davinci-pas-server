@@ -1,0 +1,13 @@
+# Used by BuildKit for dotnet/Dockerfile (build context is the repository root).
+**/bin
+**/obj
+**/TestResults
+**/data
+dotnet/tests
+harness
+testdata
+spec/examples
+spec/reference
+spec/tools
+spec/ms-metadata
+.git

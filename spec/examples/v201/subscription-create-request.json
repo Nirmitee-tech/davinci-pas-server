@@ -1,0 +1,46 @@
+{
+  "resourceType": "Subscription",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"
+    ]
+  },
+  "status": "requested",
+  "end": "2030-12-31T23:59:59Z",
+  "reason": "Synthetic PAS test: notify the requesting provider organization when a pended prior authorization is finalized",
+  "criteria": "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic",
+  "_criteria": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria",
+        "valueString": "org-identifier=1745023006"
+      }
+    ]
+  },
+  "channel": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout",
+        "valueUnsignedInt": 60
+      },
+      {
+        "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count",
+        "valuePositiveInt": 20
+      }
+    ],
+    "type": "rest-hook",
+    "endpoint": "http://localhost:8280/custom/subscriptions_r5_backport_r4_server/subscription/channel/notification_listener",
+    "payload": "application/fhir+json",
+    "_payload": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+          "valueCode": "id-only"
+        }
+      ]
+    },
+    "header": [
+      "Authorization: Bearer nirmitee-pas-v201-example-token"
+    ]
+  }
+}

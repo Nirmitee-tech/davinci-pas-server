@@ -1,0 +1,54 @@
+{
+  "suite_id": "davinci_pas_server_suite_v221",
+  "note": "Synthetic data. Values ${FHIR_BASE} and ${NOTIFICATION_TOKEN} are substituted by harness/run_suite.py.",
+  "inputs": [
+    {
+      "name": "server_endpoint",
+      "value": "${FHIR_BASE}"
+    },
+    {
+      "name": "access_token",
+      "value": "${NOTIFICATION_TOKEN}"
+    },
+    {
+      "name": "subscription_resource",
+      "file": "subscription.json"
+    },
+    {
+      "name": "approval_pa_submit_request_payload",
+      "file": "approval_submit.json"
+    },
+    {
+      "name": "denial_pa_submit_request_payload",
+      "file": "denial_submit.json"
+    },
+    {
+      "name": "pended_pa_submit_request_payload",
+      "file": "pended_submit.json"
+    },
+    {
+      "name": "claim_update_initial_submit_payload",
+      "file": "claim_update_initial_submit.json"
+    },
+    {
+      "name": "claim_update_add_item_submit_payload",
+      "file": "claim_update_add_item_submit.json"
+    },
+    {
+      "name": "claim_update_modify_cancel_submit_payload",
+      "file": "claim_update_modify_cancel_submit.json"
+    },
+    {
+      "name": "claim_update_cancel_all_submit_payload",
+      "file": "claim_update_cancel_all_submit.json"
+    },
+    {
+      "name": "must_support_pa_submit_request_payload",
+      "file": "must_support_submit.json"
+    },
+    {
+      "name": "must_support_pa_inquire_request_payload",
+      "file": "must_support_inquire.json"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Nirmitee.DaVinci.Common</RootNamespace>
+    <Description>Shared building blocks for the Nirmitee Da Vinci servers: CDS Hooks client JWT validation, SMART Backend Services client assertion validation, JWKS caching, FHIR JSON helpers, FHIR data client and JSONL audit log.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.3.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Nirmitee.DaVinci.Crd.Tests" />
+    <InternalsVisibleTo Include="Nirmitee.DaVinci.Dtr.Tests" />
+    <InternalsVisibleTo Include="Nirmitee.DaVinci.Pas.Tests" />
+  </ItemGroup>
+
+</Project>

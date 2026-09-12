@@ -1,0 +1,132 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-update-modify",
+  "identifier": {
+    "system": "http://example.org/nirmitee-synthetic/transaction",
+    "value": "tx-update-modify"
+  },
+  "type": "collection",
+  "timestamp": "2026-09-01T10:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/nirmitee-synthetic/fhir/Claim/claim-update-modify",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "claim-update-modify",
+        "identifier": [
+          {
+            "system": "http://example.org/nirmitee-synthetic/claim",
+            "value": "update-modify"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "preauthorization",
+        "created": "2026-09-01T10:00:00Z",
+        "patient": {
+          "reference": "Patient/pat-synthetic-1"
+        },
+        "insurer": {
+          "reference": "Organization/org-payer-1"
+        },
+        "provider": {
+          "reference": "Organization/org-provider-1"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/cov-1"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                  "code": "G0154"
+                }
+              ]
+            }
+          },
+          {
+            "sequence": 2,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                  "code": "G0154"
+                }
+              ]
+            }
+          }
+        ],
+        "related": [
+          {
+            "claim": {
+              "reference": "http://example.org/nirmitee-synthetic/fhir/Claim/claim-update-add"
+            },
+            "relationship": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship",
+                  "code": "prior"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/nirmitee-synthetic/fhir/Patient/pat-synthetic-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-synthetic-1",
+        "name": [
+          {
+            "family": "Synthetic",
+            "given": [
+              "Test"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/nirmitee-synthetic/fhir/Organization/org-payer-1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-payer-1",
+        "name": "Synthetic Payer"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/nirmitee-synthetic/fhir/Organization/org-provider-1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-provider-1",
+        "name": "Synthetic Clinic"
+      }
+    }
+  ]
+}

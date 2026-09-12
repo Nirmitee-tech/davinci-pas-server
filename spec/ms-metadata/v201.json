@@ -1,0 +1,2150 @@
+{
+  "beneficiary": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary",
+    "resource": "Patient",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "Patient.extension:race",
+          "slice_name": "race",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+          "modifier_extension": false
+        },
+        {
+          "id": "Patient.extension:ethnicity",
+          "slice_name": "ethnicity",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+          "modifier_extension": false
+        },
+        {
+          "id": "Patient.extension:birthsex",
+          "slice_name": "birthsex",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+        {
+          "slice_id": "Patient.multipleBirth[x]:multipleBirthInteger",
+          "slice_name": "multipleBirthInteger",
+          "path": "multipleBirth[x]",
+          "discriminator": {
+            "type": "type",
+            "code": "Integer"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "identifier.system"
+        },
+        {
+          "path": "identifier.value"
+        },
+        {
+          "path": "name"
+        },
+        {
+          "path": "name.family"
+        },
+        {
+          "path": "name.given"
+        },
+        {
+          "path": "name.prefix"
+        },
+        {
+          "path": "name.suffix"
+        },
+        {
+          "path": "telecom"
+        },
+        {
+          "path": "telecom.system"
+        },
+        {
+          "path": "telecom.value"
+        },
+        {
+          "path": "telecom.use"
+        },
+        {
+          "path": "gender"
+        },
+        {
+          "path": "birthDate"
+        },
+        {
+          "path": "address"
+        },
+        {
+          "path": "address.line"
+        },
+        {
+          "path": "address.city"
+        },
+        {
+          "path": "address.district"
+        },
+        {
+          "path": "address.state"
+        },
+        {
+          "path": "address.postalCode"
+        },
+        {
+          "path": "address.country"
+        },
+        {
+          "path": "address.period"
+        },
+        {
+          "path": "communication"
+        },
+        {
+          "path": "communication.language"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "claim_inquiry": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-inquiry",
+    "resource": "Claim",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "Claim.extension:levelOfServiceType",
+          "slice_name": "levelOfServiceType",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-levelOfServiceCode",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.extension:certificationType",
+          "slice_name": "certificationType",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam:OverallClaimMember.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam:ItemClaimMember.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:itemTraceNumber",
+          "slice_name": "itemTraceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:authorizationNumber",
+          "slice_name": "authorizationNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:administrationReferenceNumber",
+          "slice_name": "administrationReferenceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:requestType",
+          "slice_name": "requestType",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceItemRequestType",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:certificationType",
+          "slice_name": "certificationType",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:certIssueDate",
+          "slice_name": "certIssueDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemCertificationIssueDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:certExpirationDate",
+          "slice_name": "certExpirationDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemCertificationExpirationDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:certEffectiveDate",
+          "slice_name": "certEffectiveDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemCertificationEffectiveDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:reviewActionCode",
+          "slice_name": "reviewActionCode",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewActionCode",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+        {
+          "slice_id": "Claim.careTeam:OverallClaimMember",
+          "slice_name": "OverallClaimMember",
+          "path": "careTeam",
+          "discriminator": {
+            "type": "value",
+            "values": [
+              {
+                "path": "extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').valueBoolean",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "slice_id": "Claim.careTeam:ItemClaimMember",
+          "slice_name": "ItemClaimMember",
+          "path": "careTeam",
+          "discriminator": {
+            "type": "value",
+            "values": [
+              {
+                "path": "extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').valueBoolean",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:PatientEvent",
+          "slice_name": "PatientEvent",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "patientEvent",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:AdmissionDates",
+          "slice_name": "AdmissionDates",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "admissionDates",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:DischargeDates",
+          "slice_name": "DischargeDates",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "dischargeDates",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "billablePeriod"
+        },
+        {
+          "path": "insurer",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        },
+        {
+          "path": "provider",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "careTeam"
+        },
+        {
+          "path": "careTeam.sequence"
+        },
+        {
+          "path": "careTeam.provider",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "careTeam.role"
+        },
+        {
+          "path": "careTeam.qualification"
+        },
+        {
+          "path": "supportingInfo"
+        },
+        {
+          "path": "supportingInfo.sequence"
+        },
+        {
+          "path": "supportingInfo.category"
+        },
+        {
+          "path": "supportingInfo:PatientEvent.timing[x]"
+        },
+        {
+          "path": "supportingInfo:AdmissionDates.timing[x]"
+        },
+        {
+          "path": "supportingInfo:DischargeDates.timing[x]"
+        },
+        {
+          "path": "diagnosis"
+        },
+        {
+          "path": "diagnosis.sequence"
+        },
+        {
+          "path": "diagnosis.diagnosis[x]"
+        },
+        {
+          "path": "diagnosis.type"
+        },
+        {
+          "path": "insurance"
+        },
+        {
+          "path": "insurance.sequence"
+        },
+        {
+          "path": "insurance.coverage",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage"
+          ]
+        },
+        {
+          "path": "accident"
+        },
+        {
+          "path": "accident.date"
+        },
+        {
+          "path": "accident.type"
+        },
+        {
+          "path": "item"
+        },
+        {
+          "path": "item.sequence"
+        },
+        {
+          "path": "item.careTeamSequence"
+        },
+        {
+          "path": "item.diagnosisSequence"
+        },
+        {
+          "path": "item.informationSequence"
+        },
+        {
+          "path": "item.revenue"
+        },
+        {
+          "path": "item.productOrService"
+        },
+        {
+          "path": "item.modifier"
+        },
+        {
+          "path": "item.serviced[x]"
+        },
+        {
+          "path": "item.location[x]"
+        },
+        {
+          "path": "item.quantity"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "claim_update": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update",
+    "resource": "Claim",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "Claim.extension:levelOfServiceType",
+          "slice_name": "levelOfServiceType",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-levelOfServiceCode",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.extension:encounter",
+          "slice_name": "encounter",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Claim.encounter",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam:OverallClaimMember.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.careTeam:ItemClaimMember.extension:careTeamClaimScope",
+          "slice_name": "careTeamClaimScope",
+          "path": "careTeam.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.diagnosis.extension:recordedDate",
+          "slice_name": "recordedDate",
+          "path": "diagnosis.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-diagnosisRecordedDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:itemTraceNumber",
+          "slice_name": "itemTraceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:authorizationNumber",
+          "slice_name": "authorizationNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:administrationReferenceNumber",
+          "slice_name": "administrationReferenceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:requestType",
+          "slice_name": "requestType",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceItemRequestType",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:certificationType",
+          "slice_name": "certificationType",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:epsdtIndicator",
+          "slice_name": "epsdtIndicator",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-epsdtIndicator",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:nursingHomeResidentialStatus",
+          "slice_name": "nursingHomeResidentialStatus",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-nursingHomeResidentialStatus",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:nursingHomeLevelOfCare",
+          "slice_name": "nursingHomeLevelOfCare",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-nursingHomeLevelOfCare",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:revenueUnitRateLimit",
+          "slice_name": "revenueUnitRateLimit",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-revenueUnitRateLimit",
+          "modifier_extension": false
+        },
+        {
+          "id": "Claim.item.extension:requestedService",
+          "slice_name": "requestedService",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-requestedService",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+        {
+          "slice_id": "Claim.careTeam:OverallClaimMember",
+          "slice_name": "OverallClaimMember",
+          "path": "careTeam",
+          "discriminator": {
+            "type": "value",
+            "values": [
+              {
+                "path": "extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').valueBoolean",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "slice_id": "Claim.careTeam:ItemClaimMember",
+          "slice_name": "ItemClaimMember",
+          "path": "careTeam",
+          "discriminator": {
+            "type": "value",
+            "values": [
+              {
+                "path": "extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').valueBoolean",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:PatientEvent",
+          "slice_name": "PatientEvent",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "patientEvent",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:AdmissionDates",
+          "slice_name": "AdmissionDates",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "admissionDates",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:DischargeDates",
+          "slice_name": "DischargeDates",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "dischargeDates",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:AdditionalInformation",
+          "slice_name": "AdditionalInformation",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "additionalInformation",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        },
+        {
+          "slice_id": "Claim.supportingInfo:MessageText",
+          "slice_name": "MessageText",
+          "path": "supportingInfo",
+          "discriminator": {
+            "type": "patternCodeableConcept",
+            "path": "category",
+            "code": "freeFormMessage",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "insurer",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        },
+        {
+          "path": "provider",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "careTeam"
+        },
+        {
+          "path": "careTeam.sequence"
+        },
+        {
+          "path": "careTeam.provider",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "careTeam.role"
+        },
+        {
+          "path": "careTeam.qualification"
+        },
+        {
+          "path": "supportingInfo"
+        },
+        {
+          "path": "supportingInfo.sequence"
+        },
+        {
+          "path": "supportingInfo.category"
+        },
+        {
+          "path": "supportingInfo:PatientEvent.timing[x]"
+        },
+        {
+          "path": "supportingInfo:AdmissionDates.timing[x]"
+        },
+        {
+          "path": "supportingInfo:DischargeDates.timing[x]"
+        },
+        {
+          "path": "supportingInfo:AdditionalInformation.sequence"
+        },
+        {
+          "path": "supportingInfo:AdditionalInformation.category"
+        },
+        {
+          "path": "supportingInfo:AdditionalInformation.value[x]",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "supportingInfo:MessageText.sequence"
+        },
+        {
+          "path": "supportingInfo:MessageText.category"
+        },
+        {
+          "path": "supportingInfo:MessageText.value[x]"
+        },
+        {
+          "path": "diagnosis"
+        },
+        {
+          "path": "diagnosis.sequence"
+        },
+        {
+          "path": "diagnosis.diagnosis[x]"
+        },
+        {
+          "path": "diagnosis.type"
+        },
+        {
+          "path": "insurance"
+        },
+        {
+          "path": "insurance.sequence"
+        },
+        {
+          "path": "insurance.coverage",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage"
+          ]
+        },
+        {
+          "path": "accident"
+        },
+        {
+          "path": "accident.date"
+        },
+        {
+          "path": "accident.type"
+        },
+        {
+          "path": "item"
+        },
+        {
+          "path": "item.sequence"
+        },
+        {
+          "path": "item.careTeamSequence"
+        },
+        {
+          "path": "item.diagnosisSequence"
+        },
+        {
+          "path": "item.informationSequence"
+        },
+        {
+          "path": "item.revenue"
+        },
+        {
+          "path": "item.category"
+        },
+        {
+          "path": "item.productOrService"
+        },
+        {
+          "path": "item.modifier"
+        },
+        {
+          "path": "item.serviced[x]"
+        },
+        {
+          "path": "item.location[x]"
+        },
+        {
+          "path": "item.quantity"
+        },
+        {
+          "path": "item.unitPrice"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "claiminquiryresponse": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claiminquiryresponse",
+    "resource": "ClaimResponse",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "ClaimResponse.item.extension:itemTraceNumber",
+          "slice_name": "itemTraceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:preAuthIssueDate",
+          "slice_name": "preAuthIssueDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:preAuthPeriod",
+          "slice_name": "preAuthPeriod",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:previousAuthorizationNumber",
+          "slice_name": "previousAuthorizationNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:administrationReferenceNumber",
+          "slice_name": "administrationReferenceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:requestedServiceDate",
+          "slice_name": "requestedServiceDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemRequestedServiceDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:authorizedItemDetail",
+          "slice_name": "authorizedItemDetail",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:authorizedProvider",
+          "slice_name": "authorizedProvider",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:communicatedDiagnosis",
+          "slice_name": "communicatedDiagnosis",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.adjudication.extension:reviewAction",
+          "slice_name": "reviewAction",
+          "path": "item.adjudication.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:followupAction",
+          "slice_name": "followupAction",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorFollowupAction",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:errorElement",
+          "slice_name": "errorElement",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorElement",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:errorPath",
+          "slice_name": "errorPath",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorPath",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "status"
+        },
+        {
+          "path": "patient",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "created"
+        },
+        {
+          "path": "insurer",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        },
+        {
+          "path": "requestor",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "request",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"
+          ]
+        },
+        {
+          "path": "outcome"
+        },
+        {
+          "path": "preAuthPeriod"
+        },
+        {
+          "path": "item"
+        },
+        {
+          "path": "item.adjudication"
+        },
+        {
+          "path": "error"
+        },
+        {
+          "path": "error.code"
+        }
+      ],
+      "recursive_elements": [
+        "adjudication"
+      ]
+    }
+  },
+  "claimresponse": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse",
+    "resource": "ClaimResponse",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "ClaimResponse.item.extension:itemTraceNumber",
+          "slice_name": "itemTraceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:preAuthIssueDate",
+          "slice_name": "preAuthIssueDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:preAuthPeriod",
+          "slice_name": "preAuthPeriod",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:previousAuthorizationNumber",
+          "slice_name": "previousAuthorizationNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:administrationReferenceNumber",
+          "slice_name": "administrationReferenceNumber",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:requestedServiceDate",
+          "slice_name": "requestedServiceDate",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemRequestedServiceDate",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:authorizedItemDetail",
+          "slice_name": "authorizedItemDetail",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:authorizedProvider",
+          "slice_name": "authorizedProvider",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.extension:communicatedDiagnosis",
+          "slice_name": "communicatedDiagnosis",
+          "path": "item.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.item.adjudication.extension:reviewAction",
+          "slice_name": "reviewAction",
+          "path": "item.adjudication.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:followupAction",
+          "slice_name": "followupAction",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorFollowupAction",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:errorElement",
+          "slice_name": "errorElement",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorElement",
+          "modifier_extension": false
+        },
+        {
+          "id": "ClaimResponse.error.extension:errorPath",
+          "slice_name": "errorPath",
+          "path": "error.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-errorPath",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "status"
+        },
+        {
+          "path": "patient",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "created"
+        },
+        {
+          "path": "insurer",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        },
+        {
+          "path": "requestor",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "request",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"
+          ]
+        },
+        {
+          "path": "outcome"
+        },
+        {
+          "path": "preAuthPeriod"
+        },
+        {
+          "path": "item"
+        },
+        {
+          "path": "item.noteNumber"
+        },
+        {
+          "path": "item.adjudication"
+        },
+        {
+          "path": "communicationRequest",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-communicationrequest"
+          ]
+        },
+        {
+          "path": "error"
+        },
+        {
+          "path": "error.code"
+        }
+      ],
+      "recursive_elements": [
+        "adjudication"
+      ]
+    }
+  },
+  "communication_request": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-communicationrequest",
+    "resource": "CommunicationRequest",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "CommunicationRequest.payload.extension:serviceLineNumber",
+          "slice_name": "serviceLineNumber",
+          "path": "payload.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+          "modifier_extension": false
+        },
+        {
+          "id": "CommunicationRequest.payload.extension:communicatedDiagnosis",
+          "slice_name": "communicatedDiagnosis",
+          "path": "payload.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis",
+          "modifier_extension": false
+        },
+        {
+          "id": "CommunicationRequest.payload.extension:contentModifier",
+          "slice_name": "contentModifier",
+          "path": "payload.extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-contentModifier",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "category"
+        },
+        {
+          "path": "medium"
+        },
+        {
+          "path": "payload"
+        },
+        {
+          "path": "payload.content[x]"
+        },
+        {
+          "path": "requester",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        },
+        {
+          "path": "recipient",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "sender",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-requestor"
+          ]
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "coverage": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage",
+    "resource": "Coverage",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Coverage.relationship.coding:X12Code",
+          "slice_name": "X12Code",
+          "path": "relationship.coding",
+          "discriminator": {
+            "type": "requiredBinding",
+            "path": "",
+            "values": [
+
+            ]
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "status"
+        },
+        {
+          "path": "subscriber",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-subscriber"
+          ]
+        },
+        {
+          "path": "subscriberId"
+        },
+        {
+          "path": "beneficiary",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "relationship"
+        },
+        {
+          "path": "payor",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer"
+          ]
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "device_request": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-devicerequest",
+    "resource": "DeviceRequest",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "DeviceRequest.extension:coverage",
+          "slice_name": "coverage",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "code[x]"
+        },
+        {
+          "path": "subject",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "occurrence[x]"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "encounter": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-encounter",
+    "resource": "Encounter",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "Encounter.extension:patientStatus",
+          "slice_name": "patientStatus",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-patientStatus",
+          "modifier_extension": false
+        },
+        {
+          "id": "Encounter.extension:nursingHomeResidentialStatus",
+          "slice_name": "nursingHomeResidentialStatus",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-nursingHomeResidentialStatus",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "identifier.system"
+        },
+        {
+          "path": "identifier.value"
+        },
+        {
+          "path": "status",
+          "fixed_value": "planned"
+        },
+        {
+          "path": "class"
+        },
+        {
+          "path": "type"
+        },
+        {
+          "path": "subject",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "participant"
+        },
+        {
+          "path": "participant.type"
+        },
+        {
+          "path": "participant.period"
+        },
+        {
+          "path": "participant.individual",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        {
+          "path": "period"
+        },
+        {
+          "path": "reasonCode"
+        },
+        {
+          "path": "hospitalization"
+        },
+        {
+          "path": "hospitalization.admitSource"
+        },
+        {
+          "path": "hospitalization.dischargeDisposition"
+        },
+        {
+          "path": "location"
+        },
+        {
+          "path": "location.location",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+          ]
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "insurer": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer",
+    "resource": "Organization",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Organization.identifier:NPI",
+          "slice_name": "NPI",
+          "path": "identifier",
+          "discriminator": {
+            "type": "patternIdentifier",
+            "path": "",
+            "system": "http://hl7.org/fhir/sid/us-npi"
+          }
+        },
+        {
+          "slice_id": "Organization.identifier:TIN",
+          "slice_name": "TIN",
+          "path": "identifier",
+          "discriminator": {
+            "type": "patternIdentifier",
+            "path": "",
+            "system": "http://terminology.hl7.org/NamingSystem/USEIN"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "active"
+        },
+        {
+          "path": "type"
+        },
+        {
+          "path": "name"
+        },
+        {
+          "path": "telecom"
+        },
+        {
+          "path": "address"
+        },
+        {
+          "path": "address.line"
+        },
+        {
+          "path": "address.city"
+        },
+        {
+          "path": "address.state"
+        },
+        {
+          "path": "address.postalCode"
+        },
+        {
+          "path": "address.country"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "medication_request": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-medicationrequest",
+    "resource": "MedicationRequest",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "MedicationRequest.extension:coverage",
+          "slice_name": "coverage",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "status"
+        },
+        {
+          "path": "intent",
+          "fixed_value": "order"
+        },
+        {
+          "path": "reported[x]",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "medication[x]",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "subject",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "encounter",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "authoredOn"
+        },
+        {
+          "path": "requester",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "dosageInstruction"
+        },
+        {
+          "path": "dosageInstruction.text"
+        },
+        {
+          "path": "dosageInstruction.timing"
+        },
+        {
+          "path": "dispenseRequest"
+        },
+        {
+          "path": "dispenseRequest.quantity"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "nutrition_order": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-nutritionorder",
+    "resource": "NutritionOrder",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "NutritionOrder.extension:coverage",
+          "slice_name": "coverage",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "patient",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "oralDiet"
+        },
+        {
+          "path": "oralDiet.type"
+        },
+        {
+          "path": "enteralFormula"
+        },
+        {
+          "path": "enteralFormula.baseFormulaType"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "pas_inquiry_request_bundle": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle",
+    "resource": "Bundle",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Bundle.entry:Claim",
+          "slice_name": "Claim",
+          "path": "entry",
+          "discriminator": {
+            "type": "type",
+            "code": "Claim",
+            "path": "resource"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "timestamp"
+        },
+        {
+          "path": "entry"
+        },
+        {
+          "path": "entry.fullUrl"
+        },
+        {
+          "path": "entry.resource"
+        }
+      ],
+      "recursive_elements": [
+        "link"
+      ]
+    }
+  },
+  "pas_inquiry_response_bundle": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle",
+    "resource": "Bundle",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Bundle.entry:ClaimResponse",
+          "slice_name": "ClaimResponse",
+          "path": "entry",
+          "discriminator": {
+            "type": "type",
+            "code": "ClaimResponse",
+            "path": "resource"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "timestamp"
+        },
+        {
+          "path": "entry"
+        },
+        {
+          "path": "entry.fullUrl"
+        },
+        {
+          "path": "entry.resource"
+        }
+      ],
+      "recursive_elements": [
+        "link"
+      ]
+    }
+  },
+  "pas_request_bundle": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle",
+    "resource": "Bundle",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Bundle.entry:Claim",
+          "slice_name": "Claim",
+          "path": "entry",
+          "discriminator": {
+            "type": "type",
+            "code": "Claim",
+            "path": "resource"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "timestamp"
+        },
+        {
+          "path": "entry"
+        },
+        {
+          "path": "entry.fullUrl"
+        },
+        {
+          "path": "entry.resource"
+        }
+      ],
+      "recursive_elements": [
+        "link"
+      ]
+    }
+  },
+  "pas_response_bundle": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle",
+    "resource": "Bundle",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Bundle.entry:ClaimResponse",
+          "slice_name": "ClaimResponse",
+          "path": "entry",
+          "discriminator": {
+            "type": "type",
+            "code": "ClaimResponse",
+            "path": "resource"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "timestamp"
+        },
+        {
+          "path": "entry"
+        },
+        {
+          "path": "entry.fullUrl"
+        },
+        {
+          "path": "entry.resource"
+        }
+      ],
+      "recursive_elements": [
+        "link"
+      ]
+    }
+  },
+  "practitioner": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitioner",
+    "resource": "Practitioner",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Practitioner.identifier:NPI",
+          "slice_name": "NPI",
+          "path": "identifier",
+          "discriminator": {
+            "type": "patternIdentifier",
+            "path": "",
+            "system": "http://hl7.org/fhir/sid/us-npi"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "name"
+        },
+        {
+          "path": "name.family"
+        },
+        {
+          "path": "telecom"
+        },
+        {
+          "path": "address"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "practitioner_role": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitionerrole",
+    "resource": "PractitionerRole",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "practitioner",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitioner"
+          ]
+        },
+        {
+          "path": "organization",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-organization"
+          ]
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "requestor": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-requestor",
+    "resource": "Organization",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+        {
+          "slice_id": "Organization.identifier:NPI",
+          "slice_name": "NPI",
+          "path": "identifier",
+          "discriminator": {
+            "type": "patternIdentifier",
+            "path": "",
+            "system": "http://hl7.org/fhir/sid/us-npi"
+          }
+        },
+        {
+          "slice_id": "Organization.identifier:TIN",
+          "slice_name": "TIN",
+          "path": "identifier",
+          "discriminator": {
+            "type": "patternIdentifier",
+            "path": "",
+            "system": "http://terminology.hl7.org/NamingSystem/USEIN"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "active"
+        },
+        {
+          "path": "type"
+        },
+        {
+          "path": "name"
+        },
+        {
+          "path": "telecom"
+        },
+        {
+          "path": "address"
+        },
+        {
+          "path": "address.line"
+        },
+        {
+          "path": "address.city"
+        },
+        {
+          "path": "address.state"
+        },
+        {
+          "path": "address.postalCode"
+        },
+        {
+          "path": "address.country"
+        },
+        {
+          "path": "contact"
+        },
+        {
+          "path": "contact.name"
+        },
+        {
+          "path": "contact.telecom"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "service_request": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-servicerequest",
+    "resource": "ServiceRequest",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "ServiceRequest.extension:serviceCodeEnd",
+          "slice_name": "serviceCodeEnd",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-productOrServiceCodeEnd",
+          "modifier_extension": false
+        },
+        {
+          "id": "ServiceRequest.extension:coverage",
+          "slice_name": "coverage",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "code"
+        },
+        {
+          "path": "quantity[x]"
+        },
+        {
+          "path": "subject",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "occurrence[x]"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "subscriber": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-subscriber",
+    "resource": "Patient",
+    "must_supports": {
+      "extensions": [
+        {
+          "id": "Patient.extension:race",
+          "slice_name": "race",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+          "modifier_extension": false
+        },
+        {
+          "id": "Patient.extension:ethnicity",
+          "slice_name": "ethnicity",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+          "modifier_extension": false
+        },
+        {
+          "id": "Patient.extension:birthsex",
+          "slice_name": "birthsex",
+          "path": "extension",
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+          "modifier_extension": false
+        }
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "identifier.system"
+        },
+        {
+          "path": "identifier.value"
+        },
+        {
+          "path": "name"
+        },
+        {
+          "path": "name.family"
+        },
+        {
+          "path": "name.given"
+        },
+        {
+          "path": "name.prefix"
+        },
+        {
+          "path": "name.suffix"
+        },
+        {
+          "path": "telecom"
+        },
+        {
+          "path": "telecom.system"
+        },
+        {
+          "path": "telecom.value"
+        },
+        {
+          "path": "telecom.use"
+        },
+        {
+          "path": "gender"
+        },
+        {
+          "path": "birthDate"
+        },
+        {
+          "path": "address"
+        },
+        {
+          "path": "address.line"
+        },
+        {
+          "path": "address.city"
+        },
+        {
+          "path": "address.district"
+        },
+        {
+          "path": "address.state"
+        },
+        {
+          "path": "address.postalCode"
+        },
+        {
+          "path": "address.country"
+        },
+        {
+          "path": "address.period"
+        },
+        {
+          "path": "communication"
+        },
+        {
+          "path": "communication.language"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  },
+  "task": {
+    "profile_url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-task",
+    "resource": "Task",
+    "must_supports": {
+      "extensions": [
+
+      ],
+      "slices": [
+
+      ],
+      "elements": [
+        {
+          "path": "identifier"
+        },
+        {
+          "path": "status"
+        },
+        {
+          "path": "statusReason"
+        },
+        {
+          "path": "intent"
+        },
+        {
+          "path": "code"
+        },
+        {
+          "path": "for",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-beneficiary"
+          ]
+        },
+        {
+          "path": "requester",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "requester.identifier"
+        },
+        {
+          "path": "owner",
+          "types": [
+            "Reference"
+          ]
+        },
+        {
+          "path": "owner.identifier"
+        },
+        {
+          "path": "reasonCode.coding.code",
+          "fixed_value": "priorAuthorization"
+        },
+        {
+          "path": "reasonReference",
+          "types": [
+            "Reference"
+          ],
+          "target_profiles": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"
+          ]
+        },
+        {
+          "path": "restriction.period"
+        },
+        {
+          "path": "input"
+        }
+      ],
+      "recursive_elements": [
+
+      ]
+    }
+  }
+}

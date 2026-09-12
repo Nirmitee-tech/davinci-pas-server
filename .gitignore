@@ -1,0 +1,68 @@
+# Inferno test kits: cloned locally to run the suites, never redistributed
+/davinci-crd-test-kit/
+/davinci-dtr-test-kit/
+/davinci-pas-test-kit/
+davinci-*-test-kit/
+
+# Internal planning notes and generated harness pointers
+/PLAN.md
+/GOAL.md
+/HANDOFF.md
+/NOTES.md
+/harness/LATEST.md
+/harness/LATEST-*.md
+/harness/latest_index.json
+
+# Go build output
+/go/bin/
+*.test
+*.out
+
+# .NET build output
+bin/
+obj/
+TestResults/
+*.user
+*.suo
+*.userprefs
+.vs/
+
+# Editors and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Runtime data and audit logs
+/go/data/
+/dotnet/data/
+data/
+pas-audit/
+*.jsonl
+*.log
+
+# Harness runtime files and raw reports (curated summaries live in docs/results/)
+/harness/reports/
+.suite-run.lock
+__pycache__/
+*.pyc
+
+# Environment files, tunnel configs and key material
+.env
+.env.*
+!.env.example
+ngrok.yml
+ngrok*.yml
+.ngrok2/
+.cloudflared/
+cloudflared*.yml
+cloudflared*.yaml
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ecdsa*
+id_ed25519*

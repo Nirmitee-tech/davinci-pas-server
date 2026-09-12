@@ -1,0 +1,19 @@
+{
+  "status": 400,
+  "body": {
+    "resourceType": "OperationOutcome",
+    "issue": [
+      {
+        "severity": "error",
+        "code": "required",
+        "details": {
+          "text": "The PAS Bundle has no entries; the first entry must be a Claim."
+        },
+        "diagnostics": "The PAS Bundle has no entries; the first entry must be a Claim.",
+        "expression": [
+          "Bundle.entry"
+        ]
+      }
+    ]
+  }
+}

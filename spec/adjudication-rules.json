@@ -1,0 +1,205 @@
+{
+  "rulesVersion": "1.1.0",
+  "description": "Deterministic adjudication rules for the Nirmitee PAS servers (Go and .NET). Both servers load this file unchanged. Rules are evaluated per Claim.item in listed order; the first matching rule wins for that item. Claim-level results are derived from the item results (see claimLevelDecision). All codes and data are synthetic test values. See spec/SPEC.md section 6.",
+  "reviewActionCodeSystem": "https://codesystem.x12.org/005010/306",
+  "decisions": {
+    "approved": {
+      "code": "A1",
+      "display": "Certified in total",
+      "certified": true
+    },
+    "partial": {
+      "code": "A2",
+      "display": "Certified - partial",
+      "certified": true
+    },
+    "denied": {
+      "code": "A3",
+      "display": "Not Certified",
+      "certified": false
+    },
+    "pended": {
+      "code": "A4",
+      "display": "Pending",
+      "certified": false
+    },
+    "modified": {
+      "code": "A6",
+      "display": "Modified",
+      "certified": true
+    },
+    "cancelled": {
+      "code": "C",
+      "display": "Cancelled",
+      "certified": false
+    }
+  },
+  "productOrServiceSystem": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+  "itemRules": [
+    {
+      "id": "PAS-R01-item-cancelled",
+      "when": {
+        "itemModifierExtensionInfoCancelled": true
+      },
+      "decision": "cancelled",
+      "note": "Claim.item.modifierExtension modifierextension-infoCancelled valueBoolean true"
+    },
+    {
+      "id": "PAS-R02-request-cancelled",
+      "when": {
+        "claimCertificationTypeCode": "3"
+      },
+      "decision": "cancelled",
+      "note": "Claim.extension extension-certificationType code 3 (Cancel) cancels every item of the request"
+    },
+    {
+      "id": "PAS-R03-noncovered-service",
+      "when": {
+        "productOrServiceCodes": [
+          "A9270"
+        ]
+      },
+      "decision": "denied",
+      "reviewActionReasonCode": {
+        "system": "https://codesystem.x12.org/external/886",
+        "code": "0U",
+        "display": "Additional patient information required"
+      },
+      "note": "A9270 Noncovered item or service"
+    },
+    {
+      "id": "PAS-R04-processing-error",
+      "when": {
+        "productOrServiceCodes": [
+          "A9999"
+        ]
+      },
+      "decision": "denied",
+      "addError": {
+        "code": {
+          "system": "https://codesystem.x12.org/005010/901",
+          "code": "15",
+          "display": "Required application data missing"
+        },
+        "followupAction": {
+          "system": "https://codesystem.x12.org/005010/889",
+          "code": "C",
+          "display": "Please Correct and Resubmit"
+        },
+        "errorElement": "2000F-SV1-01",
+        "errorPathTemplate": "Claim.item[{itemIndex}].productOrService"
+      },
+      "note": "A9999 Miscellaneous DME supply or accessory, not otherwise specified; the item is not certified and ClaimResponse.error is populated"
+    },
+    {
+      "id": "PAS-R05-pended-clinical-review",
+      "when": {
+        "productOrServiceCodes": [
+          "E0470"
+        ]
+      },
+      "decision": "pended",
+      "autoFinalize": true,
+      "finalDecision": "approved",
+      "note": "E0470 Respiratory assist device, bi-level; pended for clinical review, then approved and notified"
+    },
+    {
+      "id": "PAS-R06-pended-additional-documentation",
+      "when": {
+        "productOrServiceCodes": [
+          "E1390"
+        ]
+      },
+      "decision": "pended",
+      "autoFinalize": false,
+      "requestAdditionalInformation": {
+        "communicationRequestCategory": {
+          "system": "https://codesystem.x12.org/005010/755",
+          "code": "03",
+          "display": "Report Justifying Treatment Beyond Utilization Guidelines"
+        },
+        "attachmentLoinc": {
+          "system": "http://loinc.org",
+          "code": "18776-5",
+          "display": "Plan of care note"
+        },
+        "contentModifier": {
+          "system": "http://loinc.org",
+          "code": "18804-5"
+        }
+      },
+      "note": "E1390 Oxygen concentrator; pended waiting for documentation (CommunicationRequest and Task), never auto-finalized"
+    },
+    {
+      "id": "PAS-R07-modified",
+      "when": {
+        "productOrServiceCodes": [
+          "E0601"
+        ]
+      },
+      "decision": "modified",
+      "addItem": {
+        "productOrService": {
+          "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+          "code": "E0601"
+        },
+        "modifier": {
+          "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+          "code": "RR"
+        },
+        "quantity": 3,
+        "unitPriceUSD": 95.0,
+        "decision": "approved"
+      },
+      "note": "E0601 CPAP device; purchase modified to a 3 month rental (addItem)"
+    },
+    {
+      "id": "PAS-R99-default-approve",
+      "when": {},
+      "decision": "approved"
+    }
+  ],
+  "claimLevelDecision": [
+    {
+      "if": "all items cancelled",
+      "decision": "cancelled"
+    },
+    {
+      "if": "any item pended",
+      "decision": "pended"
+    },
+    {
+      "if": "all non-cancelled items denied",
+      "decision": "denied"
+    },
+    {
+      "if": "any item denied and any item certified",
+      "decision": "partial"
+    },
+    {
+      "if": "any item modified",
+      "decision": "modified"
+    },
+    {
+      "if": "otherwise",
+      "decision": "approved"
+    }
+  ],
+  "authorizationNumberTemplate": "AUTH-{claimIdentifierValue}-{itemSequence}",
+  "administrationReferenceNumberTemplate": "ADMREF-{claimIdentifierValue}-{itemSequence}",
+  "replacedAuthorizations": {
+    "AUTH-PA-2026-0004-1": "AUTH-PA-2026-0004-1-R1",
+    "AUTH-PA-2026-0104-1": "AUTH-PA-2026-0104-1-R1"
+  },
+  "preAuthPeriodDays": 90,
+  "pended": {
+    "autoFinalizeSeconds": 10,
+    "notificationRetrySeconds": 3,
+    "notificationMaxSeconds": 280
+  },
+  "payer": {
+    "applicationSenderCode": "NSHPAPP",
+    "reviewerNpi": "1900000005"
+  },
+  "claimAuthorizationNumberTemplate": "AUTH-{claimIdentifierValue}"
+}

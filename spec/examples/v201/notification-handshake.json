@@ -1,0 +1,52 @@
+{
+  "headers": {
+    "Content-Type": "application/fhir+json",
+    "Authorization": "Bearer nirmitee-pas-v201-example-token"
+  },
+  "body": {
+    "resourceType": "Bundle",
+    "id": "c656ab96-7c13-425a-a0db-dc7a2b742655",
+    "type": "history",
+    "timestamp": "2026-09-12T10:00:00Z",
+    "entry": [
+      {
+        "fullUrl": "urn:uuid:4502add6-fadc-4621-a3a1-46bce4ef0ae2",
+        "resource": {
+          "resourceType": "Parameters",
+          "id": "4502add6-fadc-4621-a3a1-46bce4ef0ae2",
+          "parameter": [
+            {
+              "name": "subscription",
+              "valueReference": {
+                "reference": "http://host.docker.internal:8085/v201/fhir/Subscription/5a048f30-b166-4f36-aca5-f10218e15f84"
+              }
+            },
+            {
+              "name": "topic",
+              "valueCanonical": "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
+            },
+            {
+              "name": "status",
+              "valueCode": "requested"
+            },
+            {
+              "name": "type",
+              "valueCode": "handshake"
+            },
+            {
+              "name": "events-since-subscription-start",
+              "valueString": "0"
+            }
+          ]
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://host.docker.internal:8085/v201/fhir/Subscription/5a048f30-b166-4f36-aca5-f10218e15f84/$status"
+        },
+        "response": {
+          "status": "200"
+        }
+      }
+    ]
+  }
+}

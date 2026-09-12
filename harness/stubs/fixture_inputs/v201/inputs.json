@@ -1,0 +1,41 @@
+{
+  "suite_id": "davinci_pas_server_suite_v201",
+  "inputs": [
+    {
+      "name": "server_endpoint",
+      "value": "${FHIR_BASE}"
+    },
+    {
+      "name": "access_token",
+      "value": "${NOTIFICATION_TOKEN}"
+    },
+    {
+      "name": "subscription_resource",
+      "file": "subscription.json"
+    },
+    {
+      "name": "approval_pa_submit_request_payload",
+      "file": "approval.json"
+    },
+    {
+      "name": "denial_pa_submit_request_payload",
+      "file": "denial.json"
+    },
+    {
+      "name": "pended_pa_submit_request_payload",
+      "file": "pended.json"
+    },
+    {
+      "name": "must_support_pa_submit_request_payload",
+      "file": "ms_submit.json"
+    },
+    {
+      "name": "must_support_pa_inquire_request_payload",
+      "file": "ms_inquire.json"
+    },
+    {
+      "name": "pended_pa_inquire_request_payload",
+      "file": "pended_inquire.json"
+    }
+  ]
+}
