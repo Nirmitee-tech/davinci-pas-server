@@ -4,7 +4,7 @@
 # Mount a different rules file with -v and PAS_RULES_FILE. The test-only control routes stay disabled unless
 # PAS_ADMIN_ENABLED=true is passed for a conformance run; never set it in this image.
 
-FROM golang:1.26-alpine AS build
+FROM golang:1.27-alpine AS build
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
