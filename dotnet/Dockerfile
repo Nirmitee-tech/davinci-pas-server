@@ -5,7 +5,7 @@
 # Run:
 #   docker run --rm -p 8086:8086 nirmitee-pas-dotnet
 
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 WORKDIR /repo
 
 COPY dotnet/src/Nirmitee.DaVinci.Common/Nirmitee.DaVinci.Common.csproj dotnet/src/Nirmitee.DaVinci.Common/
